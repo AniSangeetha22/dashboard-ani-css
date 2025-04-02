@@ -31,93 +31,76 @@ export const LeftSidebar = () => {
     navigate("/"); // Navigates to home screen
   };
 
-  const homepageClick = () => {
-    navigate("/");
-  };
-  // const menubarClick = () => {
-  //   setMenubarOpen(menubarOpen);
-  // };
-
   return (
     <>
       <div className="leftbar-main-menu">
-        <div className="menubar" onClick={() => setMenubarOpen(!menubarOpen)}>
-          <Menu size={19} />
-          {/* {menubarOpen ? <Leftsidelist /> : ""} */}
-          {/* {menubarOpen && <LeftSidebar />} */}
-          {/* {dropdown && <DropdownLogout />} */}
+        <div className="leftbar-main-heading">
+          <House size={19} /> <span onClick={navHome}>Home</span>
         </div>
-        <menu
-          className={`leftbar-main-heading ${menubarOpen ? "showMenu" : ""}`}
-        >
-          <div className="leftbar-main-heading" onClick={homepageClick}>
-            <House size={19} /> <span onClick={navHome}>Home</span>
+
+        <div className="leftbar-main-heading ">
+          <div className="left-main-heading-h4">
+            <CircleUserRound size={19} /> <h4>Admin</h4>
           </div>
 
-          <div className="leftbar-main-heading ">
-            <div className="left-main-heading-h4">
-              <CircleUserRound size={19} /> <h4>Admin</h4>
-            </div>
+          <div className="leftbar-admin-submenu">
+            <Link className="leftbar-admin-submenu-li" to="/addproduct">
+              <ShoppingBasket size={19} /> <span>Add Product</span>
+            </Link>
+            <Link className="leftbar-admin-submenu-li" to="/products">
+              <ShoppingCart size={19} /> <span>Products</span>
+            </Link>
 
-            <div className="leftbar-admin-submenu">
-              <Link className="leftbar-admin-submenu-li" to="/addproduct">
-                <ShoppingBasket size={19} /> <span>Add Product</span>
-              </Link>
-              <Link className="leftbar-admin-submenu-li" to="/products">
-                <ShoppingCart size={19} /> <span>Products</span>
-              </Link>
+            <Link className="leftbar-admin-submenu-li" to="/customers">
+              <Users size={19} /> <span>Customers</span>
+            </Link>
+          </div>
+        </div>
 
-              <Link className="leftbar-admin-submenu-li" to="/customers">
-                <Users size={19} /> <span>Customers</span>
-              </Link>
-            </div>
+        <div className="leftbar-main-heading ">
+          <div className="left-main-heading-h4">
+            <Users size={19} /> <h4>Online Shop</h4>
           </div>
 
-          <div className="leftbar-main-heading ">
-            <div className="left-main-heading-h4">
-              <Users size={19} /> <h4>Online Shop</h4>
-            </div>
+          <div className="leftbar-admin-submenu">
+            <Link className="leftbar-admin-submenu-li" to="/homepage">
+              <ShoppingBasket size={19} /> <span>Home Page</span>
+            </Link>
+          </div>
+        </div>
 
-            <div className="leftbar-admin-submenu">
-              <Link className="leftbar-admin-submenu-li" to="/homepage">
-                <ShoppingBasket size={19} /> <span>Home Page</span>
-              </Link>
-            </div>
+        <div className="leftbar-main-heading ">
+          <div className="left-main-heading-h4">
+            <ChartNoAxesColumnIncreasing size={19} /> <h4>Analytics</h4>
           </div>
 
-          <div className="leftbar-main-heading ">
-            <div className="left-main-heading-h4">
-              <ChartNoAxesColumnIncreasing size={19} /> <h4>Analytics</h4>
-            </div>
+          <div className="leftbar-admin-submenu">
+            <Link className="leftbar-admin-submenu-li" to="/barchart">
+              <ChartColumnBig size={19} /> <span>Bar Chart</span>
+            </Link>
+            <Link className="leftbar-admin-submenu-li" to="/linechart">
+              <ChartLine size={19} /> <span>Line Chart</span>
+            </Link>
+            <Link className="leftbar-admin-submenu-li" to="/areachart">
+              <ChartArea size={19} /> <span>Area Chart</span>
+            </Link>
+          </div>
+        </div>
 
-            <div className="leftbar-admin-submenu">
-              <Link className="leftbar-admin-submenu-li" to="/barchart">
-                <ChartColumnBig size={19} /> <span>Bar Chart</span>
-              </Link>
-              <Link className="leftbar-admin-submenu-li" to="/linechart">
-                <ChartLine size={19} /> <span>Line Chart</span>
-              </Link>
-              <Link className="leftbar-admin-submenu-li" to="/areachart">
-                <ChartArea size={19} /> <span>Area Chart</span>
-              </Link>
-            </div>
+        <div className="leftbar-main-heading ">
+          <div className="left-main-heading-h4">
+            <UsersRound size={19} /> <h4>Register Page</h4>
           </div>
 
-          <div className="leftbar-main-heading ">
-            <div className="left-main-heading-h4">
-              <UsersRound size={19} /> <h4>Register Page</h4>
-            </div>
-
-            <div className="leftbar-admin-submenu">
-              <Link className="leftbar-admin-submenu-li" to="/registerfile">
-                <ChartColumnBig size={19} /> <span>Register</span>
-              </Link>
-              <Link className="leftbar-admin-submenu-li" to="/loginuserfile">
-                <ChartLine size={19} /> <span>Login</span>
-              </Link>
-            </div>
+          <div className="leftbar-admin-submenu">
+            <Link className="leftbar-admin-submenu-li" to="/registerfile">
+              <ChartColumnBig size={19} /> <span>Register</span>
+            </Link>
+            <Link className="leftbar-admin-submenu-li" to="/loginuserfile">
+              <ChartLine size={19} /> <span>Login</span>
+            </Link>
           </div>
-        </menu>
+        </div>
       </div>
     </>
   );
