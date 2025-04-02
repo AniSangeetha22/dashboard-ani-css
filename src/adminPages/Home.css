@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+   background-color: #f8f4f0;
 }
 .mainhomepage h2 {
   color: #bc6c25;
