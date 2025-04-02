@@ -51,19 +51,19 @@ body{
     /* background-color: #E3E6E0; */
     @media (min-width: 300px)  and (max-width: 992px){
       
-        width: 0px;
+        width: 5%;
        } 
 }
-.menubar{
+/* .menubar{
     display:none;
     @media (min-width: 300px)  and (max-width: 992px){
     display: block;
 
     padding-bottom: 50px;
     
-   } 
-}
-@media (min-width: 300px)  and (max-width: 992px) {
+   }  
+} */
+/* @media (min-width: 300px)  and (max-width: 992px) {
    .leftbar-main-heading .showMenu {
     width: 15%;
     font-weight: 600;
@@ -77,7 +77,7 @@ body{
     letter-spacing: 0px;
     text-align: left;
     z-index: 100;
-    /* margin-left: 15px; */
+    /* margin-left: 15px; 
     cursor: pointer;
 
     
@@ -85,23 +85,74 @@ body{
    
 }
 
-}
+} */
 .leftbar-main-heading{
     margin-top: 20px;
     margin-left: 15px; 
     /* margin-bottom: 3px; */
     color: #36454F;
+    
     @media (min-width: 300px)  and (max-width: 992px)  {
-        display: none;
-       }
-     
+        margin-left: 1px; 
+    } 
     
 
 }
+
+@media (min-width: 300px)  and (max-width: 992px)  {
+    .leftbar-main-heading span{
+        display: none;
+    }
+} 
+
+
+.left-main-heading-h4{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    @media (min-width: 300px)  and (max-width: 992px)  {
+        display: none;
+    }
+}
+  
+
+/* .left-main-hide{
+    width: 15%;
+    font-weight: 600;
+    font-style: bold;
+    font-size: 20px;
+    color: #525B75;
+    text-decoration: none solid rgba(82, 91, 117, 0.8);
+    text-align:start;
+    text-indent:0px;
+    letter-spacing: 0px;
+    text-align: left;
+    /* margin-left: 15px; 
+    cursor: pointer;
+    @media (min-width: 300px)  and (max-width: 992px)  {
+       
+            display: none;
+        } 
+
+} */
+
+/* @media (min-width: 300px)  and (max-width: 992px)  {
+    .left-main-hide{
+        display: none;
+    }   
+} */
+
+
 .leftbar-admin-submenu{
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    @media (min-width: 300px)  and (max-width: 992px)  {
+        font-size: 20px;
+        margin-left: 0px;
+       /* display: none; */
+    } 
     
    
 }
@@ -119,10 +170,20 @@ display: flex;
 flex-direction: row;
 justify-content: flex-start;
 align-items: center;
+ @media (min-width: 300px)  and (max-width: 992px)  {
+    font-size: 20px;
+   
+   /* display: none;*/ 
+} 
+
 }
 .leftbar-admin-submenu-li span {
 margin-left: 5px;
 text-align: center;
+ @media (min-width: 300px)  and (max-width: 992px)  {
+   
+   display: none;
+} 
 }
 
 .leftbar-admin-submenu-li:hover{

@@ -17,6 +17,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import "../../index.css";
+// import { Leftsidelist } from "./Leftsidelist";
 
 export const LeftSidebar = () => {
   const [menubarOpen, setMenubarOpen] = useState(false);
@@ -30,6 +31,9 @@ export const LeftSidebar = () => {
     navigate("/"); // Navigates to home screen
   };
 
+  const homepageClick = () => {
+    navigate("/");
+  };
   // const menubarClick = () => {
   //   setMenubarOpen(menubarOpen);
   // };
@@ -39,19 +43,22 @@ export const LeftSidebar = () => {
       <div className="leftbar-main-menu">
         <div className="menubar" onClick={() => setMenubarOpen(!menubarOpen)}>
           <Menu size={19} />
-          {/* {menubarOpen ? <Menu size={19} /> : ""} */}
+          {/* {menubarOpen ? <Leftsidelist /> : ""} */}
           {/* {menubarOpen && <LeftSidebar />} */}
           {/* {dropdown && <DropdownLogout />} */}
         </div>
         <menu
           className={`leftbar-main-heading ${menubarOpen ? "showMenu" : ""}`}
         >
-          <div className="leftbar-main-heading">
+          <div className="leftbar-main-heading" onClick={homepageClick}>
             <House size={19} /> <span onClick={navHome}>Home</span>
           </div>
 
-          <div className="leftbar-main-heading showMenu">
-            <CircleUserRound size={19} /> <span>Admin</span>
+          <div className="leftbar-main-heading ">
+            <div className="left-main-heading-h4">
+              <CircleUserRound size={19} /> <h4>Admin</h4>
+            </div>
+
             <div className="leftbar-admin-submenu">
               <Link className="leftbar-admin-submenu-li" to="/addproduct">
                 <ShoppingBasket size={19} /> <span>Add Product</span>
@@ -66,16 +73,23 @@ export const LeftSidebar = () => {
             </div>
           </div>
 
-          <div className="leftbar-main-heading">
-            <Users size={19} /> <span>Online Shop</span>
+          <div className="leftbar-main-heading ">
+            <div className="left-main-heading-h4">
+              <Users size={19} /> <h4>Online Shop</h4>
+            </div>
+
             <div className="leftbar-admin-submenu">
               <Link className="leftbar-admin-submenu-li" to="/homepage">
                 <ShoppingBasket size={19} /> <span>Home Page</span>
               </Link>
             </div>
           </div>
-          <div className="leftbar-main-heading">
-            <ChartNoAxesColumnIncreasing size={19} /> <span>Analytics</span>
+
+          <div className="leftbar-main-heading ">
+            <div className="left-main-heading-h4">
+              <ChartNoAxesColumnIncreasing size={19} /> <h4>Analytics</h4>
+            </div>
+
             <div className="leftbar-admin-submenu">
               <Link className="leftbar-admin-submenu-li" to="/barchart">
                 <ChartColumnBig size={19} /> <span>Bar Chart</span>
@@ -89,8 +103,11 @@ export const LeftSidebar = () => {
             </div>
           </div>
 
-          <div className="leftbar-main-heading">
-            <UsersRound size={19} /> <span>Register Page</span>
+          <div className="leftbar-main-heading ">
+            <div className="left-main-heading-h4">
+              <UsersRound size={19} /> <h4>Register Page</h4>
+            </div>
+
             <div className="leftbar-admin-submenu">
               <Link className="leftbar-admin-submenu-li" to="/registerfile">
                 <ChartColumnBig size={19} /> <span>Register</span>
