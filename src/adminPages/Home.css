@@ -1,5 +1,6 @@
 .mainhomepage {
-  height: 105vh;
+  
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -8,7 +9,7 @@
 }
 
 .amtinfo {
-  width: 90%;
+  width: 100%;
   padding-top: 10px;
   text-align: left;
   padding-left: 3%;
