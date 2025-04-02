@@ -9,12 +9,13 @@
    font-family: "Nunito Sans";
   
 }
+
+body{
+    width: 100%;
+    height: 100vh;
+}
 #root{
     width: 100%;
-}
-body{
-    /* width: 100%; */
-    height: 100vh;
 }
 .App{
     width: 100%;
@@ -42,6 +43,10 @@ body{
     font-size: 20px;
     color: #525B75;
     text-decoration: none solid rgba(82, 91, 117, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     text-align:start;
     text-indent:0px;
     letter-spacing: 0px;
@@ -50,50 +55,23 @@ body{
     cursor: pointer;
     /* background-color: #E3E6E0; */
     @media (min-width: 300px)  and (max-width: 992px){
-      
+   
+margin-right: 15px;
+
+
         width: 5%;
        } 
 }
-/* .menubar{
-    display:none;
-    @media (min-width: 300px)  and (max-width: 992px){
-    display: block;
 
-    padding-bottom: 50px;
-    
-   }  
-} */
-/* @media (min-width: 300px)  and (max-width: 992px) {
-   .leftbar-main-heading .showMenu {
-    width: 15%;
-    font-weight: 600;
-    font-style: bold;
-    background-color: #525B75;
-    font-size: 20px;
-    color: #525B75;
-    text-decoration: none solid rgba(82, 91, 117, 0.8);
-    text-align:start;
-    text-indent:0px;
-    letter-spacing: 0px;
-    text-align: left;
-    z-index: 100;
-    /* margin-left: 15px; 
-    cursor: pointer;
-
-    
-
-   
-}
-
-} */
 .leftbar-main-heading{
     margin-top: 20px;
     margin-left: 15px; 
-    /* margin-bottom: 3px; */
+   
     color: #36454F;
     
     @media (min-width: 300px)  and (max-width: 992px)  {
         margin-left: 1px; 
+        color: #aa571c;
     } 
     
 
@@ -117,31 +95,7 @@ body{
 }
   
 
-/* .left-main-hide{
-    width: 15%;
-    font-weight: 600;
-    font-style: bold;
-    font-size: 20px;
-    color: #525B75;
-    text-decoration: none solid rgba(82, 91, 117, 0.8);
-    text-align:start;
-    text-indent:0px;
-    letter-spacing: 0px;
-    text-align: left;
-    /* margin-left: 15px; 
-    cursor: pointer;
-    @media (min-width: 300px)  and (max-width: 992px)  {
-       
-            display: none;
-        } 
 
-} */
-
-/* @media (min-width: 300px)  and (max-width: 992px)  {
-    .left-main-hide{
-        display: none;
-    }   
-} */
 
 
 .leftbar-admin-submenu{
@@ -151,7 +105,7 @@ body{
     @media (min-width: 300px)  and (max-width: 992px)  {
         font-size: 20px;
         margin-left: 0px;
-       /* display: none; */
+      
     } 
     
    
@@ -172,8 +126,10 @@ justify-content: flex-start;
 align-items: center;
  @media (min-width: 300px)  and (max-width: 992px)  {
     font-size: 20px;
+    color: #aa571c;
    
-   /* display: none;*/ 
+   
+ 
 } 
 
 }
