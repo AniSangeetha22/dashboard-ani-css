@@ -31,10 +31,7 @@ body{
     display: flex;
     flex-direction: row;
     position: relative;
-   @media (min-width: 300px)  and (max-width: 992px){
-
-    background-color: #f8f4f0;
-    }
+  
    
   
 
