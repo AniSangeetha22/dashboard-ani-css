@@ -1,16 +1,26 @@
 import React from "react";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-import { createContext, useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
+
 import ProductContext from "../context/ProductContext";
-import { BarChartHome } from "../chartPages/BarChartHome";
-import { AreaChartHome } from "../chartPages/AreaChartHome";
-import { LineChartHome } from "../chartPages/LineChartHome";
-import { PieChartHome } from "../chartPages/PieChartHome";
-import "./Home.css";
 
-export const Home = () => {
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
+export const PieChartHome = () => {
   const { addonlyOrders, fetchonlyOrders, updatephoneamt, phonetotalamt } =
     useContext(ProductContext);
+
+  useEffect(() => {
+    fetchonlyOrders();
+  }, []);
 
   useEffect(() => {
     updatephoneamt();
@@ -41,9 +51,10 @@ export const Home = () => {
       htsamt = htsamt + parseInt(addonlyOrders[i].subamt);
     }
   }
+  console.log("Fetch only addonlyOrders.length from Home Page");
+  console.log(addonlyOrders.length);
   console.log("Fetch only Samsung Amt from Home Page");
   console.log(htsamt);
-
   let hthamt = 0;
   for (let i = 0; i < addonlyOrders.length; i++) {
     if (addonlyOrders[i].ftype === "huawei") {
@@ -53,38 +64,32 @@ export const Home = () => {
   console.log("Fetch only Samsung Amt from Home Page");
   console.log(hthamt);
 
+  const data = [
+    { name: "Iphone", value: htiamt },
+    { name: "Samsung", value: htsamt },
+    { name: "Huawei", value: hthamt },
+  ];
+
   return (
-    <main className="mainhomepage">
-      <h2>Ecommerce Dashboard</h2>
-      <div className="amtinfo">
-        <div>
-          <p>Total iphone Amout </p> <span>: {htiamt}</span>
-        </div>
-
-        <div>
-          <p>Total Samsung Amount </p>
-          <span>: {htsamt}</span>
-        </div>
-
-        <div>
-          <p>Total Huawe Amount </p>
-          <span>: {hthamt}</span>
-        </div>
-      </div>
-      <div className="chartsdiv">
-        <div className="chartbox">
-          <BarChartHome />
-        </div>
-        <div className="chartbox">
-          <AreaChartHome />
-        </div>
-        <div className="chartbox">
-          <LineChartHome />
-        </div>
-        <div className="chartbox">
-          <PieChartHome />
-        </div>
-      </div>
-    </main>
+    <ResponsiveContainer width={600} height={300}>
+      <PieChart>
+        <Pie
+          data={data}
+          dataKey="value"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          outerRadius={90}
+          fill="#8884d8"
+          label
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+        <Legend />
+      </PieChart>
+    </ResponsiveContainer>
   );
 };
